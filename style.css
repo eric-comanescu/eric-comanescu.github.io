@@ -16,8 +16,9 @@
 	src: url(src/fonts/MartianMonoNerdFont-Regular.ttf);
 }
 
-#Hero { display: none !important; }
-#About { display: none !important; }
+header>nav { display: none !important; }
+/* #Hero { display: none !important; } */
+/* #About { display: none !important; } */
 /* #Projects { display: none !important; } */
 #Contact { display: none !important; }
 
@@ -39,7 +40,7 @@ body {
 	/* 3. Add accessible line-height */
 	line-height: 1.5;
 	/* 4. Improve text rendering */
-	-webkit-font-smoothing: antialiased;
+	/* -webkit-font-smoothing: antialiased; */
 }
 /* 5. Improve media defaults */
 img, picture, video, canvas, svg {
@@ -73,8 +74,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* #region Globabl Styling */
 * {
-	background-color: var(--background);
 	color: white;
+}
+
+html {
+	background-color: var(--background);
+	position: relative;
 }
 
 a {
@@ -89,6 +94,17 @@ li {
 	list-style-type: none;
 }
 
+.scroller {
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+	height: 100vh;
+}
+
+.scroller section {
+	scroll-snap-align: center;
+}
+
+#Hero,
 #About,
 #Projects {
 	height: 100vh;
@@ -127,17 +143,40 @@ li {
 /* #endregion */
 
 /* #region NavBar */
-header>nav {
-	display: none;
+header {
+	position: fixed;
+
+	top: 50%;
+	right: 3em;
+
+	transform: translateY(-50%);
+}
+
+nav ul {
+	display: flex;
+	flex-direction: column;
+
+	padding: 1em;
+
+	border-radius: 1em;
+	border: 2px solid white;
+
+	background-color: var(--accent-purple-transparent);
+}
+
+nav ul li {
+	padding: 0.25em 0;
+	transition-duration: 200ms;
+}
+
+nav ul:has(li:hover) > *:not(:hover) {
+	opacity: 0.5;
 }
 /* #endregion */
 
 /* #region Hero */
 #Hero {
-	height: 100vh;
-
-	display: flex;
-	align-items: center;
+	justify-content: start;
 }
 
 #Hero h1 {
@@ -192,13 +231,21 @@ header>nav {
 	border: 2px solid transparent;
 	border-radius: 1em;
 
+	background-color: var(--background);
+
 	transition-duration: 200ms;
+}
+
+#Projects aside:has(.project:hover) > *:not(:hover) {
+	opacity: 0.5;
 }
 
 #Projects aside .project:hover {
 	background-color: var(--accent-purple-transparent);
 
 	border: 2px solid white;
+
+	box-shadow: 0px 0px 6px 6px var(--accent-purple-transparent);
 }
 
 #Projects aside .project * {
