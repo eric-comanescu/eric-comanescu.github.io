@@ -1,59 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<script defer src="script.js"></script>
+	<title>Eric - Portfolio</title>
 </head>
+
 <body>
 	<header>
-    <nav>
-		<ul>
-			<li><h2>Eric Comanescu</h2></li>
-			<li><h3><a href="#">Home</a></h3></li>
-			<li><h3><a href="#About">About Me</a></h3></li>
-			<li><h3><a href="#Projects">Projects</a></h3></li>
-			<li><h3><a href="#">Contact</a></h3></li>
-		</ul>
-	</nav>
+		<nav>
+			<ul>
+				<li>
+					<h2>Eric Comanescu</h2>
+				</li>
+				<li>
+					<h3><a href="#About">About Me</a></h3>
+				</li>
+				<li>
+					<h3><a href="#Projects">Projects</a></h3>
+				</li>
+				<li>
+					<h3><a href="#Contact">Contact</a></h3>
+				</li>
+			</ul>
+		</nav>
 	</header>
 	<main>
-		<section id="#">
+		<section id="Hero">
 			<h1>
-				Heya! I'm Eric.
+				Heya! <br> I'm Eric.
 			</h1>
 		</section>
 		<section id="About">
-			<h2>About Me</h2>
-			<p>
-				Currently I'm a third year CompSci student at John Abbot College.
-			</p>
-			<p>
-				I generally lean towards anything related to backend developpment,
-				as well as game developpment, which is what inspired me to go into
-				this field.
-			</p>
-			<p>
-				Outside of school, I enjoy learning new skills that I can add to my
-				repertoire. I've been teaching myself C++ for the past year and have
-				reached a point where I'm comfortable enough with it to use it for
-				one of my classes' final project.
-			</p>
+			<div class="about-info">
+				<h2>About Me</h2>
+				<p>
+					Currently I'm a third year CompSci student at <a href="https://johnabbott.qc.ca/" target="_blank">John Abbott College</a>.
+				</p>
+				<p>
+					I generally lean towards anything related to backend developpment,
+					as well as game developpment, which is what inspired me to go into
+					this field.
+				</p>
+				<p>
+					Outside of school, I enjoy learning new skills that I can add to my
+					repertoire. I've been teaching myself C++ for the past year and have
+					reached a point where I'm comfortable enough with it to use it for
+					one of my classes' final project.
+				</p>
+			</div>
 			<aside>
-				<!-- tech stack -->
+				<h2>My Techstack</h2>
 			</aside>
 		</section>
 		<section id="Projects">
-			<h2>
-				Projects
-			</h2>
-			<p>Here are some projects that I've worked on or heavily contributed to.</p>
+			<div class="projects-info">
+				<h2>
+					Projects
+				</h2>
+				<p>Here are some projects that I've worked on or heavily contributed to.</p>
+			</div>
 			<aside>
-				<div class="project">
+				<button class="project" onclick="openProject('https://github.com/eric-comanescu/fg_game')">
 					<h3>Fighting Game</h3>
 					<p>
 						A fighting game written in C++ using Make as a build tool and
-						<a href="https://www.raylib.com/">raylib</a> as a graphics library.
+						<a href="https://www.raylib.com/" target="_blank">raylib</a> as a graphics library.
 						I haven't decided on a name for it yet.
 					</p>
 					<ul class="technologies">
@@ -61,11 +76,11 @@
 						<li>Make</li>
 						<li>raylib</li>
 					</ul>
-				</div>
-				<div class="project">
+				</button>
+				<button class="project" onclick="openProject('https://github.com/TarynBeaupre/HomeCalendar-dotnetjets')">
 					<h3>Home Calendar</h3>
 					<p>
-						A simple calendar app made for a class written entirely in C# 
+						A simple calendar app made for a class written entirely in C#
 						using WPF to make the UI. It uses a local SQLite database to
 						store the events that you add to the calendar.
 					</p>
@@ -75,7 +90,7 @@
 						<li>WPF</li>
 						<li>SQLite</li>
 					</ul>
-				</div>
+				</button>
 			</aside>
 		</section>
 		<section id="Contact">

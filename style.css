@@ -1,0 +1,230 @@
+/* Variables */
+:root {
+	--background: #382742;
+	--accent-blue: #508686;
+	--accent-purple: #833f82;
+	--accent-purple-transparent: rgba(131, 63, 130, 0.25);
+
+	--header1-font-size: 5em;
+	--header2-font-size: 3em;
+	--header3-font-size: 2em;
+	--text-font-size: 1.2em;
+}
+
+@font-face {
+	font-family: 'Martian Mono';
+	src: url(src/fonts/MartianMonoNerdFont-Regular.ttf);
+}
+
+#Hero { display: none !important; }
+#About { display: none !important; }
+/* #Projects { display: none !important; } */
+#Contact { display: none !important; }
+
+/* #region CSS Reset */
+/* source: https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+	margin: 0;
+	font-family: 'Martian Mono';
+}
+
+body {
+	/* 3. Add accessible line-height */
+	line-height: 1.5;
+	/* 4. Improve text rendering */
+	-webkit-font-smoothing: antialiased;
+}
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+}
+  
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+	font: inherit;
+}
+  
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+	overflow-wrap: break-word;
+}
+  
+/* 8. Improve line wrapping */
+p {
+	text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+	text-wrap: balance;
+}  
+
+/* 9. Create a root stacking context */
+#root, #__next {
+	isolation: isolate;
+}
+/* #endregion */
+
+/* #region Globabl Styling */
+* {
+	background-color: var(--background);
+	color: white;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+#About,
+#Projects {
+	height: 100vh;
+
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+	gap: 5em;
+}
+
+#About,
+#Projects {
+	height: 100vh;
+
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+	gap: 5em;
+}
+
+#About h2,
+#Projects h2 {
+	font-size: var(--header2-font-size);
+	padding-bottom: 1em;
+}
+
+#About .about-info,
+#About aside,
+#Projects .projects-info,
+#Projects aside
+ {
+	width: calc(50vw - 20em);
+}
+/* #endregion */
+
+/* #region NavBar */
+header>nav {
+	display: none;
+}
+/* #endregion */
+
+/* #region Hero */
+#Hero {
+	height: 100vh;
+
+	display: flex;
+	align-items: center;
+}
+
+#Hero h1 {
+	font-size: var(--header1-font-size);
+	padding-left: 3em;
+}
+/* #endregion */
+
+/* #region About Me */
+#About .about-info, #About aside {
+	width: calc(50vw - 20em);
+}
+
+#About p {
+	font-size: var(--text-font-size);
+	padding-bottom: 1em;
+}
+
+#About p a {
+	text-decoration: underline;
+}
+
+#About p a:visited {
+	text-decoration: underline;
+}
+
+#About>aside {
+	display: flex;
+	justify-content: right;
+}
+/* #endregion */
+
+/* #region Projects */
+#Projects aside {
+	display: flex;
+	flex-direction: column;
+
+	gap: 2em;
+}
+
+#Projects aside .project {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	text-align: start;
+
+	gap: 1em;
+
+	padding: 1em;
+	cursor: pointer;
+
+	border: 2px solid transparent;
+	border-radius: 1em;
+
+	transition-duration: 200ms;
+}
+
+#Projects aside .project:hover {
+	background-color: var(--accent-purple-transparent);
+
+	border: 2px solid white;
+}
+
+#Projects aside .project * {
+	background-color: transparent;
+}
+
+#Projects aside .technologies {
+	display: flex;
+	gap: 1em;
+}
+
+#Projects aside h3 {
+	font-size: var(--header3-font-size);
+}
+
+#Projects aside .technologies>li {
+	background-color: var(--accent-blue);
+	padding: 0.2em 1em;
+
+	border: 0px solid transparent;
+	border-radius: 2em;
+}
+/* #endregion */
+
+/* #region Contact */
+#Contact {
+	height: 100vh;
+}
+/* #endregion */
