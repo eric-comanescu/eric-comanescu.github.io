@@ -153,6 +153,72 @@ li {
 	height: 100vh;
 }
 
+.ribbon-l,
+.ribbon-r,
+.ribbon-corner-l,
+.ribbon-corner-r {
+	transition-duration: 200ms;
+	transition-timing-function: cubic-bezier(0.3, 0.1, 0.125, 2);
+}
+
+.ribbon-l {
+	position:absolute;
+	top: 0;
+	right: 100px;
+
+	width: 30px;
+	height: 110px;
+
+	background-color: #ff1a1a;
+}
+
+.ribbon-corner-l {
+	position: absolute;
+	top: 80px;
+	right: 100px;
+
+	width: 0;
+	height: 0;
+
+	border-top: 30px solid transparent;
+	border-bottom: 30px solid transparent;
+	border-left: 30px solid #ff1a1a;
+}
+
+.ribbon-r {
+	position: absolute;
+	top: 0;
+	right: 70px;
+
+	width: 30px;
+	height: 110px;
+
+	background-color: #ff2727;
+}
+
+.ribbon-corner-r {
+	position: absolute;
+	top: 80px;
+	right: 70px;
+
+	width: 0;
+	height: 0;
+
+	border-top: 30px solid transparent;
+	border-bottom: 30px solid transparent;
+	border-right: 30px solid #ff2727;
+}
+
+#ribbon:hover .ribbon-l,
+#ribbon:hover .ribbon-r {
+	height: 160px;
+}
+
+#ribbon:hover .ribbon-corner-l,
+#ribbon:hover .ribbon-corner-r {
+	top: 130px;
+}
+
 .scroller section {
 	scroll-snap-align: center;
 }
