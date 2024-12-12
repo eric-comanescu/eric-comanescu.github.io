@@ -1,9 +1,11 @@
 /* Variables */
 :root {
 	--background: #382742;
-	--accent-blue: #508686;
-	--accent-purple: #833f82;
-	--accent-purple-transparent: rgba(131, 63, 130, 0.25);
+	--turquoise: #508686;
+	--light-blue: #739cb5;
+	--purple: #833f82;
+	--light-purple: #ae8ca9;
+	--purple-transparent: rgba(131, 63, 130, 0.25);
 
 	--header1-font-size: 5em;
 	--header2-font-size: 3em;
@@ -16,11 +18,11 @@
 	src: url(src/fonts/MartianMonoNerdFont-Regular.ttf);
 }
 
-header>nav { display: none !important; }
+/* header>nav { display: none !important; } */
 /* #Hero { display: none !important; } */
 /* #About { display: none !important; } */
 /* #Projects { display: none !important; } */
-#Contact { display: none !important; }
+/* #Contact { display: none !important; } */
 
 /* #region CSS Reset */
 /* source: https://www.joshwcomeau.com/css/custom-css-reset/ */
@@ -94,9 +96,53 @@ li {
 	list-style-type: none;
 }
 
+.folder-tab {
+	position: absolute;
+	bottom: 0;
+
+	padding: 1em 1em 0.5em 1em;
+
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+	border-top: 3px solid white;
+	border-left: 2px solid white;
+	border-right: 2px solid white;
+
+	font-size: var(--text-font-size);
+}
+
+.turquoise {
+	background-color: var(--turquoise);
+	left: 50%;
+}
+
+.blue {
+	background-color: var(--light-blue);
+	left: 60%;
+}
+
+.light-purple {
+	background-color: var(--light-purple);
+	left: 70%;
+}
+
+.folder {
+	height: calc(100vh + 2px);
+	width: 50vw;
+
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	z-index: -1;
+
+	border-left: 2px solid white;
+	border-top: 2px solid white;
+}
+
 .scroller {
 	overflow-y: scroll;
 	scroll-snap-type: y mandatory;
+	scroll-behavior: smooth;
 	height: 100vh;
 }
 
@@ -106,7 +152,9 @@ li {
 
 #Hero,
 #About,
-#Projects {
+#Projects,
+#Contact {
+	position: relative;
 	height: 100vh;
 
 	display: flex;
@@ -117,7 +165,8 @@ li {
 }
 
 #About,
-#Projects {
+#Projects,
+#Contact {
 	height: 100vh;
 
 	display: flex;
@@ -128,7 +177,8 @@ li {
 }
 
 #About h2,
-#Projects h2 {
+#Projects h2,
+#Contact h2 {
 	font-size: var(--header2-font-size);
 	padding-bottom: 1em;
 }
@@ -136,41 +186,11 @@ li {
 #About .about-info,
 #About aside,
 #Projects .projects-info,
-#Projects aside
+#Projects aside,
+#Contact .contact-info,
+#Contact aside
  {
 	width: calc(50vw - 20em);
-}
-/* #endregion */
-
-/* #region NavBar */
-header {
-	position: fixed;
-
-	top: 50%;
-	right: 3em;
-
-	transform: translateY(-50%);
-}
-
-nav ul {
-	display: flex;
-	flex-direction: column;
-
-	padding: 1em;
-
-	border-radius: 1em;
-	border: 2px solid white;
-
-	background-color: var(--accent-purple-transparent);
-}
-
-nav ul li {
-	padding: 0.25em 0;
-	transition-duration: 200ms;
-}
-
-nav ul:has(li:hover) > *:not(:hover) {
-	opacity: 0.5;
 }
 /* #endregion */
 
@@ -210,6 +230,10 @@ nav ul:has(li:hover) > *:not(:hover) {
 /* #endregion */
 
 /* #region Projects */
+#Projects p {
+	font-size: var(--text-font-size);
+}
+
 #Projects aside {
 	display: flex;
 	flex-direction: column;
@@ -241,11 +265,9 @@ nav ul:has(li:hover) > *:not(:hover) {
 }
 
 #Projects aside .project:hover {
-	background-color: var(--accent-purple-transparent);
-
 	border: 2px solid white;
 
-	box-shadow: 0px 0px 6px 6px var(--accent-purple-transparent);
+	box-shadow: 0px 0px 6px 6px var(--purple-transparent);
 }
 
 #Projects aside .project * {
@@ -262,16 +284,32 @@ nav ul:has(li:hover) > *:not(:hover) {
 }
 
 #Projects aside .technologies>li {
-	background-color: var(--accent-blue);
+	background-color: var(--turquoise);
 	padding: 0.2em 1em;
 
 	border: 0px solid transparent;
 	border-radius: 2em;
 }
+
+#Projects aside .project a {
+	text-decoration: underline;
+}
 /* #endregion */
 
 /* #region Contact */
-#Contact {
-	height: 100vh;
+#Contact .contact-info {
+	display: flex;
+	flex-direction: column;
+}
+
+#Contact .contact-info a {
+	font-size: var(--text-font-size);
+	padding-bottom: 1em;
+}
+
+#Contact aside embed {
+	width: 40vw;
+	height: 95vh;
+	padding-left: 14%;
 }
 /* #endregion */

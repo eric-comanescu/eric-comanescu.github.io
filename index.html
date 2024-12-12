@@ -10,40 +10,24 @@
 </head>
 
 <body>
-	<header>
-		<nav>
-			<ul>
-				<li>
-					<a href="#">Home</a>
-				</li>
-				<li>
-					<a href="#About">About Me</a>
-				</li>
-				<li>
-					<a href="#Projects">Projects</a>
-				</li>
-				<li>
-					<a href="#Contact">Contact</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
 	<main class="scroller">
 		<section id="Hero">
 			<h1>
-				Heya! <br> I'm Eric.
+				Hiya! <br> I'm Eric.
 			</h1>
+			<a class="folder-tab turquoise" href="#About">About Me</a>
 		</section>
 		<section id="About">
 			<div class="about-info">
 				<h2>About Me</h2>
 				<p>
-					Currently I'm a third year CompSci student at <a href="https://johnabbott.qc.ca/" target="_blank">John Abbott College</a>.
+					Currently I'm a third year CompSci student at <a href="https://johnabbott.qc.ca/"
+						target="_blank">John Abbott College</a>.
 				</p>
 				<p>
-					I generally lean towards anything related to backend developpment,
-					as well as game developpment, which is what inspired me to go into
-					this field.
+					I generally lean towards anything related to software and application
+					development, as well as game development, which is what inspired me to
+					go into this field in the first place.
 				</p>
 				<p>
 					Outside of school, I enjoy learning new skills that I can add to my
@@ -53,8 +37,10 @@
 				</p>
 			</div>
 			<aside>
-				<h2>My Techstack</h2>
+				<h2>My Tech Stack</h2>
 			</aside>
+			<div class="folder turquoise"></div>
+			<a href="#Projects" class="folder-tab blue">Projects</a>
 		</section>
 		<section id="Projects">
 			<div class="projects-info">
@@ -77,7 +63,8 @@
 						<li>raylib</li>
 					</ul>
 				</button>
-				<button class="project" onclick="openProject('https://github.com/TarynBeaupre/HomeCalendar-dotnetjets')">
+				<button class="project"
+					onclick="openProject('https://github.com/TarynBeaupre/HomeCalendar-dotnetjets')">
 					<h3>Home Calendar</h3>
 					<p>
 						A simple calendar app made for a class written entirely in C#
@@ -92,16 +79,22 @@
 					</ul>
 				</button>
 			</aside>
+			<div class="folder blue"></div>
+			<a href="#Contact" class="folder-tab light-purple">Contact</a>
 		</section>
 		<section id="Contact">
-			<h2>Contact and Resume</h2>
-			<p>My Github</p>
-			<p>My LinkedIn</p>
-			<p>My Resume</p>
+			<div class="contact-info">
+				<h2>Contact info <br> and Resume</h2>
+				<a href="mailto:ericcom@outlook.com" target="_blank">󰇰 My Email</a>
+				<a href="https://github.com/eric-comanescu" target="_blank"> My Github</a>
+				<a href="https://www.linkedin.com/in/eric-comanescu-b75108327/" target="_blank"> My LinkedIn</a>
+			</div>
+			<aside>
+				<embed src="src/media/ComanescuEric_Resume.pdf" type="application/pdf">
+			</aside>
+			<div class="folder light-purple"></div>
 		</section>
 	</main>
-	<footer>
-
-	</footer>
 </body>
+
 </html>
