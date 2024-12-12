@@ -1,20 +1,19 @@
-function openUrl(url) {
-	window.open(url)
-}
-
 let curScreen = 0
 
 const hero = document.getElementById("Hero")
 const ribbon = document.getElementById("ribbon")
+
 const heroObserver = new IntersectionObserver(
 	(entry) => {
 		if (!ribbon)
 			return;
 
-		if (entry[0].isIntersecting)
+		if (entry[0].isIntersecting) {
 			ribbon.style.display = "none"
-		else
+		}
+		else {
 			ribbon.style.display = "initial"
+		}
 	},
 	{
 		threshold: 0.0001
@@ -29,7 +28,7 @@ const aboutObserver = new IntersectionObserver(
 			curScreen = 1;
 	},
 	{
-		threshold: 0.0001
+		threshold: 0.1
 	}
 )
 const projObserver = new IntersectionObserver(
@@ -41,7 +40,7 @@ const projObserver = new IntersectionObserver(
 			curScreen = 2;
 	},
 	{
-		threshold: 0.0001
+		threshold: 0.1
 	}
 )
 const contactObserver = new IntersectionObserver(
@@ -53,7 +52,7 @@ const contactObserver = new IntersectionObserver(
 			curScreen = 3;
 	},
 	{
-		threshold: 0.0001
+		threshold: 0.1
 	}
 )
 
@@ -83,4 +82,8 @@ function goUp() {
 		default:
 			break;
 	}
+}
+
+function openUrl(url) {
+	window.open(url)
 }
