@@ -5,7 +5,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script defer src="script.js"></script>
+	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> 
 	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="src/media/favicon.jpg" type="image/x-icon">
 	<title>Eric - Portfolio</title>
 </head>
 
@@ -37,7 +39,49 @@
 				</p>
 			</div>
 			<aside>
-				<h2>My Tech Stack</h2>
+				<h2>My Skills</h2>
+				<div class="langs">
+					<div>
+						<img src="src/media/icons/c-sharp.png" alt="">
+						<p>C#</p>
+					</div>
+					<div>
+						<img src="src/media/icons/c-.png" alt="">
+						<p>C++</p>
+					</div>
+					<div>
+						<img src="src/media/icons/python.png" alt="">
+						<p>Python</p>
+					</div>
+					<div>
+						<img src="src/media/icons/html.png" alt="">
+						<p>HTML</p>
+					</div>
+					<div>
+						<img src="src/media/icons/css-3.png" alt="">
+						<p>CSS</p>
+					</div>
+					<div>
+						<img src="src/media/icons/js.png" alt="">
+						<p>JavaScript</p>
+					</div>
+					<div>
+						<img src="src/media/icons/typescript.png" alt="">
+						<p>TypeScript</p>
+					</div>
+					<div>
+						<img src="src/media/icons/sql-server.png" alt="">
+						<p>SQL</p>
+					</div>
+					<div>
+						<img src="src/media/icons/gnu-bash.png" alt="">
+						<p>Bash</p>
+					</div>
+					<div>
+						<img src="src/media/icons/linux.png" alt="">
+						<p>Linux</p>
+					</div>
+				</div>
 			</aside>
 			<div class="folder turquoise"></div>
 			<a href="#Projects" class="folder-tab blue">Projects</a>
@@ -50,7 +94,7 @@
 				<p>Here are some projects that I've worked on or heavily contributed to.</p>
 			</div>
 			<aside>
-				<button class="project" onclick="openProject('https://github.com/eric-comanescu/fg_game')">
+				<button class="project" onclick="openUrl('https://github.com/eric-comanescu/fg_game')">
 					<h3>Fighting Game</h3>
 					<p>
 						A fighting game written in C++ using Make as a build tool and
@@ -63,8 +107,7 @@
 						<li>raylib</li>
 					</ul>
 				</button>
-				<button class="project"
-					onclick="openProject('https://github.com/TarynBeaupre/HomeCalendar-dotnetjets')">
+				<button class="project" onclick="openUrl('https://github.com/TarynBeaupre/HomeCalendar-dotnetjets')">
 					<h3>Home Calendar</h3>
 					<p>
 						A simple calendar app made for a class written entirely in C#
@@ -85,15 +128,21 @@
 		<section id="Contact">
 			<div class="contact-info">
 				<h2>Contact info <br> and Resume</h2>
-				<a href="mailto:ericcom@outlook.com" target="_blank">󰇰 My Email</a>
-				<a href="https://github.com/eric-comanescu" target="_blank"> My Github</a>
-				<a href="https://www.linkedin.com/in/eric-comanescu-b75108327/" target="_blank"> My LinkedIn</a>
+				<ul>
+					<li><button onclick="openUrl('mailto:ericcom@outlook.com')">󰇰 My Email</button></li>
+					<li><button onclick="openUrl('https://github.com/eric-comanescu')"> My Github</button></li>
+					<li><button onclick="openUrl('https://www.linkedin.com/in/eric-comanescu-b75108327/')"> My
+							LinkedIn</button></li>
+				</ul>
 			</div>
 			<aside>
 				<embed src="src/media/ComanescuEric_Resume.pdf" type="application/pdf">
 			</aside>
 			<div class="folder light-purple"></div>
 		</section>
+		<div id="Hero-img">
+			<img src="src/media/hero.jpg" alt="">
+		</div>
 	</main>
 </body>
 

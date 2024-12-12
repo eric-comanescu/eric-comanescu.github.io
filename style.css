@@ -109,6 +109,13 @@ li {
 	border-right: 2px solid white;
 
 	font-size: var(--text-font-size);
+
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.3, 0.1, 0.125, 2);
+}
+
+.folder-tab:hover {
+	padding-bottom: 2em;
 }
 
 .turquoise {
@@ -203,6 +210,25 @@ li {
 	font-size: var(--header1-font-size);
 	padding-left: 3em;
 }
+
+#Hero-img {
+	position: absolute;
+	z-index: -2;
+
+	top: 0;
+	left: 0;
+
+	opacity: 0.1;
+	filter: contrast(100%) blur(30px) hue-rotate(45deg);
+}
+
+#Hero-img img {
+	width: 100vw;
+	height: 100vh;
+
+	object-fit: cover;
+	object-position: top center;
+}
 /* #endregion */
 
 /* #region About Me */
@@ -225,7 +251,35 @@ li {
 
 #About>aside {
 	display: flex;
+	flex-direction: column;
 	justify-content: right;
+}
+
+#About aside h2 {
+	align-self: center;
+}
+
+#About aside .langs {
+	display: flex;
+	flex-wrap: wrap;
+
+	align-items: center;
+	justify-content: center;
+
+	gap: 40px;
+}
+
+#About aside .langs div {
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
+	align-items: center;
+}
+
+#About .langs img {
+	width: 32px;
+	height: 32px;
 }
 /* #endregion */
 
@@ -302,9 +356,44 @@ li {
 	flex-direction: column;
 }
 
-#Contact .contact-info a {
+#Contact .contact-info ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+#Contact .contact-info ul li {
+	transition-duration: 200ms;
+}
+
+#Contact .contact-info ul li button:hover{
+	text-shadow: 0px 0px 20px var(--purple);
+}
+
+#Contact .contact-info ul li {
 	font-size: var(--text-font-size);
-	padding-bottom: 1em;
+}
+
+.contact-info button {
+	padding: 0.5em 1em;
+
+	border-radius: 1em;
+	border: 2px solid transparent;
+
+	background-color: var(--background);
+
+	transition-duration: 200ms;
+}
+
+.contact-info ul:has(li>button:hover) li>*:not(:hover) {
+	opacity: 0.5;
+}
+
+.contact-info ul button:hover {
+	cursor: pointer;
+	border: 2px solid white;
+
+	box-shadow: 0px 0px 6px 6px var(--purple-transparent);
 }
 
 #Contact aside embed {

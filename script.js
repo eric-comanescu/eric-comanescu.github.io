@@ -1,3 +1,3 @@
-function openProject(url) {
+function openUrl(url) {
 	window.open(url)
 }
