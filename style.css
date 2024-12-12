@@ -153,6 +153,10 @@ li {
 	height: 100vh;
 }
 
+#ribbon {
+	display: hidden;
+}
+
 .ribbon-l,
 .ribbon-r,
 .ribbon-corner-l,
